@@ -5,14 +5,6 @@ import { InputText } from "../InputText";
 import "./style.css";
 
 export const Forms = (props) => {
-  const teams = [
-    "Programação",
-    "Front-end",
-    "Data Science",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
 
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -56,7 +48,7 @@ export const Forms = (props) => {
         />
         <DropdownList
           label="Times"
-          itens={teams}
+          itens={props.teams}
           value={team}
           allDigit={(val) => setTeam(val)}
         />
