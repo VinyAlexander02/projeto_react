@@ -19,6 +19,10 @@ export const Forms = (props) => {
       image,
       team
     })
+    setName('')
+    setJob('')
+    setImage('')
+    setTeam('')
   };
 
   return (
