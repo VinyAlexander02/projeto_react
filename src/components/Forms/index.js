@@ -6,10 +6,10 @@ import "./style.css";
 
 export const Forms = (props) => {
 
-  const [name, setName] = useState("");
-  const [job, setJob] = useState("");
-  const [image, setImage] = useState("");
-  const [team, setTeam] = useState("");
+  const [name, setName] = useState('');
+  const [job, setJob] = useState('');
+  const [image, setImage] = useState('');
+  const [team, setTeam] = useState('');
 
   const handSave = (event) => {
     event.preventDefault();
@@ -19,10 +19,10 @@ export const Forms = (props) => {
       image,
       team
     })
-    setName()
-    setJob()
-    setImage()
-    setTeam()
+    setName('')
+    setJob('')
+    setImage('')
+    setTeam('')
   };
 
   return (
@@ -45,7 +45,7 @@ export const Forms = (props) => {
         />
         <InputText
           required={true}
-          label="Imagem"
+          label="Image URL"
           placeholder="Digite o endereço da imagem"
           value={image}
           allDigit={(val) => setImage(val)}

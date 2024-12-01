@@ -41,24 +41,28 @@ function App() {
       secondaryColor: "#FFEEDF",
     },
   ];
-  const [colaboradores, setColaboradores] = useState([]);
+  const [collaborators, setCollaborator] = useState([]);
 
-  const addColaborator = (colaborador) => {
-    console.log(colaborador);
-    setColaboradores([...colaboradores, colaborador]);
+  const addColaborator = (collaborator) => {
+    setCollaborator([...collaborators, collaborator]);
   };
 
   return (
     <div className="App">
       <Banner />
-      <Forms teams={teams.map(team => team.nome)} postCollaborator={(colaborador) => addColaborator(colaborador)} />
+      <Forms
+        teams={teams.map((team) => team.nome)}
+        postCollaborator={(collaborator) => addColaborator(collaborator)}
+      />
       {teams.map((team) => (
         <Team
           key={team.nome}
           teamName={team.nome}
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
-          collaborators={colaboradores.filter(colaborador => colaborador.team === team.nome)}
+          collaborators={collaborators.filter(
+            (collaborator) => collaborator.team === team.nome
+          )}
         />
       ))}
     </div>
