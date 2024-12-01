@@ -1,9 +1,9 @@
 import "./style.css";
 
-export const Collaborator = ({name, job, image}) => {
+export const Collaborator = ({name, job, image, backgroundColor}) => {
   return (
     <div className="colaborador">
-      <div className="cabecalho">
+      <div className="cabecalho" style={{backgroundColor: backgroundColor}}>
         <img src={image} alt={name} />
       </div>
       <div className="rodape">

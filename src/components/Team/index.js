@@ -11,7 +11,9 @@ export const Team = (props) => {
         <h3 style={{ borderColor: props.primaryColor }}>{props.teamName}</h3>
         <div className="collaborators">
           {props.collaborators.map((colaborador) => (
-            <Collaborator
+            <Collaborator 
+              key={colaborador.name}
+              backgroundColor={props.primaryColor}
               name={colaborador.name}
               job={colaborador.job}
               image={colaborador.image}
