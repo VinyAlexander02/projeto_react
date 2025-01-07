@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner img='/imagens/banner.png' alt="Texto alternativo"/>
       <Forms
         teams={teams.map((team) => team.nome)}
         postCollaborator={(collaborator) => addColaborator(collaborator)}
