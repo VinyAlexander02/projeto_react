@@ -1,9 +1,17 @@
 import "./style.css";
 
-export const InputText = (props) => {
+interface InputTextProps {
+  allDigit: (value: string) => void;
+  placeholder: string;
+  label: string;
+  value: string;
+  required: boolean;
+}
+
+export const InputText = (props: InputTextProps) => {
   const placeholderMod = `${props.placeholder}...`;
 
-  const allDigit = (event) => {
+  const allDigit = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.allDigit(event.target.value);
   };
 
@@ -20,3 +28,5 @@ export const InputText = (props) => {
     </div>
   );
 };
+
+export default InputText;
