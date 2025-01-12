@@ -1,7 +1,15 @@
 import "./style.css";
 
-export const DropdownList = (props) => {
-  const allDigit = (event) => {
+interface DropdownListProps {
+  allDigit: (value: string) => void
+  label: string
+  required: boolean
+  value: string
+  itens: string[] 
+}
+
+export const DropdownList = (props: DropdownListProps) => {
+  const allDigit = (event: { target: { value: string; }; }) => {
     props.allDigit(event.target.value);
   };
 

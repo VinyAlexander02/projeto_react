@@ -1,6 +1,13 @@
 import "./style.css";
 
-export const Collaborator = ({name, job, image, backgroundColor}) => {
+interface CollaboratorProps {
+  name: string
+  job: string
+  image: string
+  backgroundColor: string
+}
+
+export const Collaborator = ({name, job, image, backgroundColor}: CollaboratorProps) => {
   return (
     <div className="collaborator">
       <div className="header" style={{backgroundColor: backgroundColor}}>

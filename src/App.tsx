@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Banner } from "./components/Banner";
 import { Forms } from "./components/Forms";
 import { Team } from "./components/Team";
+import { ICollaborador } from "./Shared/interfaces/ICollaborator";
 
 function App() {
   const teams = [
@@ -41,9 +42,9 @@ function App() {
       secondaryColor: "#FFEEDF",
     },
   ];
-  const [collaborators, setCollaborator] = useState([]);
+  const [collaborators, setCollaborator] = useState<ICollaborador[]>([]);
 
-  const addColaborator = (collaborator) => {
+  const addColaborator = (collaborator: ICollaborador) => {
     setCollaborator([...collaborators, collaborator]);
   };
 

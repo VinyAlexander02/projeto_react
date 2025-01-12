@@ -1,7 +1,16 @@
+import { ICollaborador } from "../../Shared/interfaces/ICollaborator";
 import { Collaborator } from "../Collaborator";
+
 import "./style.css";
 
-export const Team = (props) => {
+interface TeamProps {
+  primaryColor: string
+  secondaryColor: string
+  teamName: string
+  collaborators: ICollaborador[]
+} 
+
+export const Team = (props: TeamProps) => {
   return (
     props.collaborators.length > 0 && (
       <section

@@ -3,26 +3,31 @@ import { Button } from "../Button";
 import { DropdownList } from "../DropdownList";
 import { InputText } from "../InputText";
 import "./style.css";
+import { ICollaborador } from "../../Shared/interfaces/ICollaborator";
 
-export const Forms = (props) => {
+interface FormProps {
+  postCollaborator: (collaborator: ICollaborador) => void;
+  teams: string[];
+}
 
-  const [name, setName] = useState('');
-  const [job, setJob] = useState('');
-  const [image, setImage] = useState('');
-  const [team, setTeam] = useState('');
+export const Forms = (props: FormProps) => {
+  const [name, setName] = useState("");
+  const [job, setJob] = useState("");
+  const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
 
-  const handSave = (event) => {
+  const handSave = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     props.postCollaborator({
       name,
       job,
       image,
-      team
-    })
-    setName('')
-    setJob('')
-    setImage('')
-    setTeam('')
+      team,
+    });
+    setName("");
+    setJob("");
+    setImage("");
+    setTeam("");
   };
 
   return (
@@ -51,8 +56,9 @@ export const Forms = (props) => {
           allDigit={(val) => setImage(val)}
         />
         <DropdownList
+          required={true}
           label="Times"
-          itens={props.teams}
+          itens={Array.isArray(props.teams) ? props.teams : [props.teams]}
           value={team}
           allDigit={(val) => setTeam(val)}
         />
